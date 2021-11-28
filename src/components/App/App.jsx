@@ -1,5 +1,13 @@
-function App() {
-  return <div>asdasdasd</div>;
-}
+import React, { Component } from 'react';
 
-export default App;
+export default class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  render() {
+    return <div></div>;
+  }
+}
