@@ -1,30 +1,38 @@
 import PropTypes from 'prop-types';
+import {
+  Container,
+  Table,
+  Title,
+  Thead,
+  Tbody,
+  Paragraph,
+} from './Statistics.styled';
 
 function Statistics(props) {
   const { good, neutral, bad, total, positivePercentage } = props;
   return (
-    <>
-      <h2>Statistics</h2>
-      <table>
-        <thead>
+    <Container>
+      <Title>Statistics</Title>
+      <Table>
+        <Thead>
           <tr>
             <th>Good</th>
             <th>Neutral</th>
             <th>Bad</th>
             <th>Total</th>
           </tr>
-        </thead>
-        <tbody>
+        </Thead>
+        <Tbody>
           <tr>
             <th>{good}</th>
             <th>{neutral}</th>
             <th>{bad}</th>
             <th>{total}</th>
           </tr>
-        </tbody>
-      </table>
-      <p>{`Positive feedback: ${positivePercentage}`}</p>
-    </>
+        </Tbody>
+      </Table>
+      <Paragraph>{`Positive feedback: ${positivePercentage}`}</Paragraph>
+    </Container>
   );
 }
 

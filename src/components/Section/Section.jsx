@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import { Title } from './Section.styled';
 
 function Section({ title, children }) {
   return (
     <>
       {title && (
-        <div>
-          <h1>{title}</h1>
+        <>
+          <Title>{title}</Title>
           {children}
-        </div>
+        </>
       )}
     </>
   );
