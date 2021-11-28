@@ -39,7 +39,7 @@ export default class App extends Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={this.state}
             onLeaveFeedback={this.changeFeedback}
           />
           {this.countTotalFeedback() ? (
