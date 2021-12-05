@@ -8,8 +8,7 @@ import {
   Paragraph,
 } from './Statistics.styled';
 
-function Statistics(props) {
-  const { good, neutral, bad, total, positivePercentage } = props;
+function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <Container>
       <Title>Statistics</Title>
