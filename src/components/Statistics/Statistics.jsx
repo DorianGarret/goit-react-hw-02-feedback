@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 import {
   Container,
   Table,
@@ -16,15 +17,15 @@ function Statistics({ statistics, total, positivePercentage }) {
         <Thead>
           <tr>
             {Object.keys(statistics).map(statName => (
-              <th key={statName}>{statName}</th>
+              <th key={nanoid()}>{statName}</th>
             ))}
             <th>total</th>
           </tr>
         </Thead>
         <Tbody>
           <tr>
-            {Object.values(statistics).map((statValue, idx) => (
-              <th key={idx}>{statValue}</th>
+            {Object.values(statistics).map(statValue => (
+              <th key={nanoid()}>{statValue}</th>
             ))}
             <th>{total}</th>
           </tr>
