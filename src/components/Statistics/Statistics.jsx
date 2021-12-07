@@ -8,38 +8,37 @@ import {
   Paragraph,
 } from './Statistics.styled';
 
-function Statistics({ good, neutral, bad, total, positivePercentage }) {
+function Statistics({ statistics, total, positivePercentage }) {
   return (
     <Container>
       <Title>Statistics</Title>
       <Table>
         <Thead>
           <tr>
-            <th>Good</th>
-            <th>Neutral</th>
-            <th>Bad</th>
-            <th>Total</th>
+            {Object.keys(statistics).map(statName => (
+              <th key={statName}>{statName}</th>
+            ))}
+            <th>total</th>
           </tr>
         </Thead>
         <Tbody>
           <tr>
-            <th>{good}</th>
-            <th>{neutral}</th>
-            <th>{bad}</th>
+            {Object.values(statistics).map((statValue, idx) => (
+              <th key={idx}>{statValue}</th>
+            ))}
             <th>{total}</th>
           </tr>
         </Tbody>
       </Table>
-      <Paragraph>{`Positive feedback: ${positivePercentage}`}</Paragraph>
+      <Paragraph>{`Positive feedback: ${positivePercentage}%`}</Paragraph>
     </Container>
   );
 }
 
 Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.string.isRequired,
+  statistics: PropTypes.object.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
 
 export default Statistics;
