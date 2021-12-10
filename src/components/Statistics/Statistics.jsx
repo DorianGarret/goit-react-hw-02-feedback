@@ -24,7 +24,7 @@ function Statistics({ statistics, total, positivePercentage }) {
         </Thead>
         <Tbody>
           <tr>
-            {statistics.map(([, value]) => (
+            {statistics.map(([_key, value]) => (
               <th key={nanoid()}>{value}</th>
             ))}
             <th>{total}</th>
