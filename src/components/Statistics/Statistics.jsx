@@ -16,16 +16,16 @@ function Statistics({ statistics, total, positivePercentage }) {
       <Table>
         <Thead>
           <tr>
-            {Object.keys(statistics).map(statName => (
-              <th key={nanoid()}>{statName}</th>
+            {statistics.map(([key]) => (
+              <th key={nanoid()}>{key}</th>
             ))}
             <th>total</th>
           </tr>
         </Thead>
         <Tbody>
           <tr>
-            {Object.values(statistics).map(statValue => (
-              <th key={nanoid()}>{statValue}</th>
+            {statistics.map(([, value]) => (
+              <th key={nanoid()}>{value}</th>
             ))}
             <th>{total}</th>
           </tr>
@@ -37,7 +37,7 @@ function Statistics({ statistics, total, positivePercentage }) {
 }
 
 Statistics.propTypes = {
-  statistics: PropTypes.object.isRequired,
+  statistics: PropTypes.array.isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
